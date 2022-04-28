@@ -14,6 +14,8 @@
 		C7A56CC8281A64F500846C78 /* MentalSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CC7281A64F500846C78 /* MentalSystemTests.swift */; };
 		C7A56CD2281A64F500846C78 /* MentalSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CD1281A64F500846C78 /* MentalSystemUITests.swift */; };
 		C7A56CD4281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */; };
+		C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CE4281A6EDB00846C78 /* TestMainView.swift */; };
+		C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791C8281AC7DE002DF4A4 /* TestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		C7A56CCD281A64F500846C78 /* MentalSystemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalSystemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A56CD1281A64F500846C78 /* MentalSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemUITests.swift; sourceTree = "<group>"; };
 		C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C7A56CE4281A6EDB00846C78 /* TestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMainView.swift; sourceTree = "<group>"; };
+		C7E791C8281AC7DE002DF4A4 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,10 @@
 		C7A56CB5281A64F200846C78 /* MentalSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C7A56CE0281A6E4800846C78 /* 心理测评 */,
+				C7A56CE1281A6E5700846C78 /* 心理健康站 */,
+				C7A56CE2281A6E9400846C78 /* 情绪舒缓 */,
+				C7A56CE3281A6E9C00846C78 /* 个人中心 */,
 				C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */,
 				C7A56CB8281A64F200846C78 /* ContentView.swift */,
 				C7A56CBA281A64F500846C78 /* Assets.xcassets */,
@@ -125,6 +133,36 @@
 				C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */,
 			);
 			path = MentalSystemUITests;
+			sourceTree = "<group>";
+		};
+		C7A56CE0281A6E4800846C78 /* 心理测评 */ = {
+			isa = PBXGroup;
+			children = (
+				C7A56CE4281A6EDB00846C78 /* TestMainView.swift */,
+				C7E791C8281AC7DE002DF4A4 /* TestData.swift */,
+			);
+			path = "心理测评";
+			sourceTree = "<group>";
+		};
+		C7A56CE1281A6E5700846C78 /* 心理健康站 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "心理健康站";
+			sourceTree = "<group>";
+		};
+		C7A56CE2281A6E9400846C78 /* 情绪舒缓 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "情绪舒缓";
+			sourceTree = "<group>";
+		};
+		C7A56CE3281A6E9C00846C78 /* 个人中心 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "个人中心";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +297,8 @@
 			files = (
 				C7A56CB9281A64F200846C78 /* ContentView.swift in Sources */,
 				C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */,
+				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
+				C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
