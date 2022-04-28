@@ -13,16 +13,19 @@ struct TestMainView: View {
     @ObservedObject var tableData:TestData = TestData(data: [testContent(title: "心理健康量表1", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00"),testContent(title: "心理健康量表2", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00"),testContent(title: "心理健康量表3", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00")])
     
     var body: some View {
-        ScrollView(.vertical,showsIndicators: true){
-            VStack(){
-                ForEach(self.tableData.testContentList){item in
-                    testItem(index: item.id)
-                        .environmentObject(self.tableData)
-                        .padding(.horizontal)
-                }
-            }
-        }
         
+        NavigationView{
+            ScrollView(.vertical,showsIndicators: true){
+                VStack(){
+                    ForEach(self.tableData.testContentList){item in
+                        testItem(index: item.id)
+                            .environmentObject(self.tableData)
+                            .padding(.vertical, 5.0)
+                            .padding(.horizontal)
+                    }
+                }
+            }.navigationBarTitle("心理测评")
+        }
     
     }
 }
@@ -39,10 +42,11 @@ struct testItem: View {
     var body: some View {
         
         VStack(alignment: .leading,spacing: 15) {
-            Rectangle()
-                .frame(height:10,alignment: .center)
-                .foregroundColor(Color(.sRGB, red: 146/255, green: 203/255, blue: 215/255))
-                .cornerRadius(10)
+            Circle()
+                .frame(width: 15, height: 20, alignment: .leading)
+                .padding(.leading,10)
+                .padding(.top,5)
+                .foregroundColor(Color.white)
             Text(self.tableData.testContentList[index].title)
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
@@ -62,22 +66,31 @@ struct testItem: View {
             }
             HStack() {
                 Image(systemName: "person").font(.system(size: 15))
-                Text("发布人").font(.system(size: 15))
-                Text(self.tableData.testContentList[index].admin).font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
+                Text("发布人")
+                    .font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
+                Text(self.tableData.testContentList[index].admin)
+                    .font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
             }
             .padding(.leading)
             HStack(){
                 Image(systemName: "clock").font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                 Text("发布时间").font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                 Text(self.tableData.testContentList[index].date).font(.system(size: 15))
+                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
             }
             .padding([.leading, .bottom])
         }
         .cornerRadius(20)
         .background(Rectangle()
-                        .fill(Color.white)
+                        .foregroundColor(Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255)))
                         .cornerRadius(20)
-                        .shadow(radius: 8))
+                        .shadow(radius: 5,y:5)
+                        
     }
         
     
