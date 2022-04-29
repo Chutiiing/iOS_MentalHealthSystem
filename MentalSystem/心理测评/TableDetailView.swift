@@ -82,7 +82,7 @@ struct TableDetailView: View {
                 Text("开始测评")
             }
             .foregroundColor(Color.white)
-            .frame(width: UIScreen.main.bounds.size.width/2, height: 40, alignment: .center)
+            .frame(width: UIScreen.main.bounds.size.width/2, height: 50, alignment: .center)
             .background(Color(.sRGB, red: 97/255, green: 175/255, blue: 225/255))
             .cornerRadius(15)
         }
@@ -100,5 +100,6 @@ func startTest() {
 struct TableDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TableDetailView()
+.previewInterfaceOrientation(.portrait)
     }
 }
