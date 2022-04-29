@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */; };
-		C7A56CB9281A64F200846C78 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CB8281A64F200846C78 /* ContentView.swift */; };
 		C7A56CBB281A64F500846C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBA281A64F500846C78 /* Assets.xcassets */; };
 		C7A56CBE281A64F500846C78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBD281A64F500846C78 /* Preview Assets.xcassets */; };
 		C7A56CC8281A64F500846C78 /* MentalSystemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CC7281A64F500846C78 /* MentalSystemTests.swift */; };
@@ -16,6 +15,11 @@
 		C7A56CD4281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */; };
 		C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CE4281A6EDB00846C78 /* TestMainView.swift */; };
 		C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791C8281AC7DE002DF4A4 /* TestData.swift */; };
+		C7E791CB281BB230002DF4A4 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791CA281BB230002DF4A4 /* TabBarView.swift */; };
+		C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791CC281BB414002DF4A4 /* StationMainView.swift */; };
+		C7E791CF281BB424002DF4A4 /* HealMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791CE281BB424002DF4A4 /* HealMainView.swift */; };
+		C7E791D1281BB433002DF4A4 /* PersonMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791D0281BB433002DF4A4 /* PersonMainView.swift */; };
+		C7E791D7281BCF9A002DF4A4 /* TableDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791D6281BCF9A002DF4A4 /* TableDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,6 @@
 /* Begin PBXFileReference section */
 		C7A56CB3281A64F200846C78 /* MentalSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemApp.swift; sourceTree = "<group>"; };
-		C7A56CB8281A64F200846C78 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C7A56CBA281A64F500846C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7A56CBD281A64F500846C78 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C7A56CC3281A64F500846C78 /* MentalSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MentalSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,6 +51,11 @@
 		C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7A56CE4281A6EDB00846C78 /* TestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMainView.swift; sourceTree = "<group>"; };
 		C7E791C8281AC7DE002DF4A4 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
+		C7E791CA281BB230002DF4A4 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		C7E791CC281BB414002DF4A4 /* StationMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationMainView.swift; sourceTree = "<group>"; };
+		C7E791CE281BB424002DF4A4 /* HealMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealMainView.swift; sourceTree = "<group>"; };
+		C7E791D0281BB433002DF4A4 /* PersonMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonMainView.swift; sourceTree = "<group>"; };
+		C7E791D6281BCF9A002DF4A4 /* TableDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +111,7 @@
 				C7A56CE2281A6E9400846C78 /* 情绪舒缓 */,
 				C7A56CE3281A6E9C00846C78 /* 个人中心 */,
 				C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */,
-				C7A56CB8281A64F200846C78 /* ContentView.swift */,
+				C7E791CA281BB230002DF4A4 /* TabBarView.swift */,
 				C7A56CBA281A64F500846C78 /* Assets.xcassets */,
 				C7A56CBC281A64F500846C78 /* Preview Content */,
 			);
@@ -140,6 +148,7 @@
 			children = (
 				C7A56CE4281A6EDB00846C78 /* TestMainView.swift */,
 				C7E791C8281AC7DE002DF4A4 /* TestData.swift */,
+				C7E791D6281BCF9A002DF4A4 /* TableDetailView.swift */,
 			);
 			path = "心理测评";
 			sourceTree = "<group>";
@@ -147,6 +156,7 @@
 		C7A56CE1281A6E5700846C78 /* 心理健康站 */ = {
 			isa = PBXGroup;
 			children = (
+				C7E791CC281BB414002DF4A4 /* StationMainView.swift */,
 			);
 			path = "心理健康站";
 			sourceTree = "<group>";
@@ -154,6 +164,7 @@
 		C7A56CE2281A6E9400846C78 /* 情绪舒缓 */ = {
 			isa = PBXGroup;
 			children = (
+				C7E791CE281BB424002DF4A4 /* HealMainView.swift */,
 			);
 			path = "情绪舒缓";
 			sourceTree = "<group>";
@@ -161,6 +172,7 @@
 		C7A56CE3281A6E9C00846C78 /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				C7E791D0281BB433002DF4A4 /* PersonMainView.swift */,
 			);
 			path = "个人中心";
 			sourceTree = "<group>";
@@ -295,10 +307,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7A56CB9281A64F200846C78 /* ContentView.swift in Sources */,
+				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
 				C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */,
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
+				C7E791CB281BB230002DF4A4 /* TabBarView.swift in Sources */,
 				C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */,
+				C7E791D1281BB433002DF4A4 /* PersonMainView.swift in Sources */,
+				C7E791D7281BCF9A002DF4A4 /* TableDetailView.swift in Sources */,
+				C7E791CF281BB424002DF4A4 /* HealMainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

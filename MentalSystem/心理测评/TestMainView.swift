@@ -5,6 +5,8 @@
 //  Created by 林楚婷 on 2022/4/28.
 //
 
+//心理测评主界面
+
 import SwiftUI
 
 struct TestMainView: View {
@@ -14,17 +16,15 @@ struct TestMainView: View {
     
     var body: some View {
         
-        NavigationView{
-            ScrollView(.vertical,showsIndicators: true){
-                VStack(){
-                    ForEach(self.tableData.testContentList){item in
-                        testItem(index: item.id)
-                            .environmentObject(self.tableData)
-                            .padding(.vertical, 5.0)
-                            .padding(.horizontal)
-                    }
+        ScrollView(.vertical,showsIndicators: true){
+            VStack(){
+                ForEach(self.tableData.testContentList){item in
+                    testItem(index: item.id)
+                        .environmentObject(self.tableData)
+                        .padding(.vertical, 5.0)
+                        .padding(.horizontal)
                 }
-            }.navigationBarTitle("心理测评")
+            }
         }
     
     }
@@ -45,7 +45,7 @@ struct testItem: View {
             Circle()
                 .frame(width: 15, height: 20, alignment: .leading)
                 .padding(.leading,10)
-                .padding(.top,5)
+                .padding(.top,6)
                 .foregroundColor(Color.white)
             Text(self.tableData.testContentList[index].title)
                 .fontWeight(.bold)
