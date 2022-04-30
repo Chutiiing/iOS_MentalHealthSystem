@@ -57,13 +57,13 @@ struct TableDetailView: View {
                         
                         Rectangle()
                             .frame(height: 10)
-                            .foregroundColor(Color(.sRGB, red: 97/255, green: 175/255, blue: 225/255))
+                            .foregroundColor(Color(.sRGB, red: 133/255, green: 175/255, blue: 225/255))
                             
                         VStack(alignment: .leading,spacing: 10){
                             Text("测评简介：")
                                 .font(.system(size: 18))
                                 .fontWeight(.bold)
-                            Text("心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理")
+                            Text("心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简心理健康量表简介心理健康量表简介心理健康量表简表简介心理")
                                 .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                         }
                         .padding(.all)
@@ -83,12 +83,9 @@ struct TableDetailView: View {
             }
             .foregroundColor(Color.white)
             .frame(width: UIScreen.main.bounds.size.width/2, height: 50, alignment: .center)
-            .background(Color(.sRGB, red: 97/255, green: 175/255, blue: 225/255))
+            .background(Color(.sRGB, red: 133/255, green: 175/255, blue: 235/255))
             .cornerRadius(15)
         }
-        
-        
-        
     }
 }
 
@@ -100,6 +97,5 @@ func startTest() {
 struct TableDetailView_Previews: PreviewProvider {
     static var previews: some View {
         TableDetailView()
-.previewInterfaceOrientation(.portrait)
     }
 }
