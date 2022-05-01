@@ -20,6 +20,7 @@ struct TestMainView: View {
         ScrollView(.vertical,showsIndicators: true){
             VStack(){
                 ForEach(self.tableData.testContentList){item in
+                    //实现详情页界面跳转
                     NavigationLink(destination: TableDetailView(data:self.tableData.testContentList[item.id])){
                         testItem(index: item.id)
                             .environmentObject(self.tableData)
