@@ -14,15 +14,19 @@ struct TestMainView: View {
     //量表数据
     @ObservedObject var tableData:TestData = TestData(data: [testContent(title: "心理健康量表1", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00"),testContent(title: "心理健康量表2", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00"),testContent(title: "心理健康量表3", abstract: "心理健康量表简介心理健康量表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简表简介心理健康量表简", admin: "admin", date: "2022.4.26 15:00")])
     
+    
     var body: some View {
         
         ScrollView(.vertical,showsIndicators: true){
             VStack(){
                 ForEach(self.tableData.testContentList){item in
-                    testItem(index: item.id)
-                        .environmentObject(self.tableData)
-                        .padding(.vertical, 5.0)
-                        .padding(.horizontal)
+                    NavigationLink(destination: TableDetailView(data:self.tableData.testContentList[item.id])){
+                        testItem(index: item.id)
+                            .environmentObject(self.tableData)
+                            .padding(.vertical, 5.0)
+                            .padding(.horizontal)
+                    }
+                    
                 }
             }
         }
@@ -52,17 +56,20 @@ struct testItem: View {
                 .multilineTextAlignment(.center)
                 .font(.title3)
                 .padding(.leading)
+                .foregroundColor(Color.black)
             VStack(alignment: .leading,spacing: 5){
                 Text("简介：")
                     .font(.system(size: 16))
                     .fontWeight(.bold)
                     .multilineTextAlignment(.leading)
                     .padding(.leading)
+                    .foregroundColor(Color.black)
                 Text(self.tableData.testContentList[index].abstract)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
                     .font(.system(size: 16))
                     .lineLimit(3)
+                    .foregroundColor(Color.black)
             }
             HStack() {
                 Image(systemName: "person").font(.system(size: 15))
