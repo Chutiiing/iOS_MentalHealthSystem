@@ -14,19 +14,21 @@ struct TableDetailView: View {
     var data:testContent
     
     var body: some View {
-        VStack{
+        
+        VStack {
             ScrollView(.vertical,showsIndicators: false){
+                //测评表名
                 ZStack{
                     Image("testbg")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        
+                    
                     ZStack(alignment:.leading){
                         Rectangle()
                             .frame(width: 400, height: 110)
                             .foregroundColor(Color.white)
                             .cornerRadius(10)
-                            .shadow(radius: 20)
+                            .shadow(radius: 3)
                             .offset(x: -100,y: 140)
                         VStack(alignment:.leading,spacing: 5){
                             Text(self.data.title)
@@ -57,6 +59,7 @@ struct TableDetailView: View {
                     }
                 }
                 
+                //测评简介
                 VStack(spacing:15){
                     VStack(spacing: 15){
                         Rectangle()
@@ -83,14 +86,15 @@ struct TableDetailView: View {
                     .cornerRadius(20)
                     .background(Rectangle().foregroundColor(Color.white))
                     .cornerRadius(20)
-                    .shadow(radius: 5,x:5,y:5)
+                    .shadow(radius: 3)
                     .padding(.horizontal)
-                    
                 }
                 .padding(.top,100)
-                
             }
-            .edgesIgnoringSafeArea(.top)    //忽略上方的安全距离
+            .edgesIgnoringSafeArea(.top)   //忽略上方的安全距离
+            
+            
+            
             Button(action: startTest) {
                 Text("开始测评")
             }

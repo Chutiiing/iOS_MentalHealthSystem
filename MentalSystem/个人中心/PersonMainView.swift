@@ -9,7 +9,10 @@ import SwiftUI
 
 struct PersonMainView: View {
     
-    @State var showTestHistoryPage = false;
+    @State var showTestHistoryPage = false;       //记录历史收藏记录页面是否打开
+    @State var showTipsCollectPage = false;       //记录贴士收藏界面是否打开
+    @State var showBookingPage = false;           //记录预约信息界面是否打开
+    
     
     var body: some View {
         ZStack{
@@ -17,13 +20,14 @@ struct PersonMainView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.top)    //忽略上方的安全距离
+            
+            //个人信息
             VStack() {
                 ZStack{
                     Rectangle()
                         .frame(height: 200)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
-                        .shadow(radius: 20)
                         .opacity(0.95)
                     HStack() {
                         Image("photo")
@@ -57,12 +61,13 @@ struct PersonMainView: View {
                             .font(.system(size: 16))
                     }
                 }.padding(.horizontal)
+                
+                //心理状态
                 ZStack {
                     Rectangle()
                         .frame(height: 100)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
-                        .shadow(radius: 20)
                         .opacity(0.95)
                     HStack{
                         Text("心理状态：")
@@ -77,49 +82,110 @@ struct PersonMainView: View {
                             .frame(height: 80)
                     }
                 }.padding(.horizontal)
-                        
+                
+                //功能列表
                 ZStack{
                     Rectangle()
-                        .frame(height: 300)
+                        .frame(height: 250)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
-                        .shadow(radius: 20)
                         .opacity(0.95)
-                    //历史测评记录列表查看
-                    Button(action:{
-                        self.showTestHistoryPage = true
-                    }){
-                        ZStack{
-                            Rectangle()
-                                .frame(height: 80)
-                                .foregroundColor(Color.white)
-                                .cornerRadius(10)
-                                .opacity(0.95)
-                            VStack {
-                                HStack() {
-                                    Image(systemName: "newspaper")
-                                    Text("测评历史记录")
-                                    Spacer()
-                                    Image(systemName: "chevron.right")
-                                    
-                                }.font(.system(size: 18))
+                    
+                    VStack() {
+                        //历史测评记录列表查看
+                        Button(action:{
+                            self.showTestHistoryPage = true
+                        }){
+                            ZStack{
                                 Rectangle()
-                                    .frame(height: 1)
-                                    .foregroundColor(Color(.sRGB, red:100/255, green: 100/255, blue: 100/255))
+                                    .frame(height: 45)
+                                    .foregroundColor(Color.white)
                                     .cornerRadius(10)
                                     .opacity(0.95)
-                            }.padding(.horizontal)
-                            
+                                VStack {
+                                    HStack() {
+                                        Image(systemName: "newspaper")
+                                        Text("我的测评历史")
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                        
+                                    }.font(.system(size: 18))
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(Color(.sRGB, red:100/255, green: 100/255, blue: 100/255))
+                                        .cornerRadius(10)
+                                        .opacity(0.3)
+                                }.padding(.horizontal)
+                                
+                            }
+                            .padding(.horizontal)
                         }
-                        .padding(.horizontal)
+                        .sheet(isPresented: self.$showTestHistoryPage,content:{ TestHistoryView()})
+                        .accentColor(Color.black)
+                        
+                        //历史收藏列表
+                        Button(action:{
+                            self.showTipsCollectPage = true
+                        }){
+                            ZStack{
+                                Rectangle()
+                                    .frame(height: 45)
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(10)
+                                    .opacity(0.95)
+                                VStack {
+                                    HStack() {
+                                        Image(systemName: "star")
+                                        Text("我的贴士收藏")
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                        
+                                    }.font(.system(size: 18))
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(Color(.sRGB, red:100/255, green: 100/255, blue: 100/255))
+                                        .cornerRadius(10)
+                                        .opacity(0.3)
+                                }.padding(.horizontal)
+                                
+                            }
+                            .padding(.horizontal)
+                        }
+                        .sheet(isPresented: self.$showTipsCollectPage,content:{ Text("贴士收藏记录")})
+                        .accentColor(Color.black)
+                        
+                        //预约记录按钮
+                        Button(action:{
+                            self.showBookingPage = true
+                        }){
+                            ZStack{
+                                Rectangle()
+                                    .frame(height: 45)
+                                    .foregroundColor(Color.white)
+                                    .cornerRadius(10)
+                                    .opacity(0.95)
+                                VStack {
+                                    HStack() {
+                                        Image(systemName: "text.bubble")
+                                        Text("我的预约记录")
+                                        Spacer()
+                                        Image(systemName: "chevron.right")
+                                        
+                                    }.font(.system(size: 18))
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(Color(.sRGB, red:100/255, green: 100/255, blue: 100/255))
+                                        .cornerRadius(10)
+                                        .opacity(0.3)
+                                }.padding(.horizontal)
+                                
+                            }
+                            .padding(.horizontal)
+                        }
+                        .sheet(isPresented: self.$showBookingPage,content:{ Text("预约记录")})
+                        .accentColor(Color.black)
                     }
-                    .sheet(isPresented: self.$showTestHistoryPage,content:{ Text("历史收藏记录")})
-                    .accentColor(Color.black)
-                    //历史收藏列表
-                    
-                    
                 }.padding(.horizontal)
-                
             }
             
             

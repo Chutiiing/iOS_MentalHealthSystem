@@ -73,31 +73,26 @@ struct testItem: View {
                     .foregroundColor(Color.black)
             }
             HStack() {
-                Image(systemName: "person").font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
+                Image(systemName: "person")
                 Text("发布人")
-                    .font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                 Text(self.tableData.testContentList[index].admin)
-                    .font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
             }
+            .font(.system(size: 15))
+            .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
             .padding(.leading)
             HStack(){
-                Image(systemName: "clock").font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
-                Text("发布时间").font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
-                Text(self.tableData.testContentList[index].date).font(.system(size: 15))
-                    .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
+                Image(systemName: "clock")
+                Text("发布时间")
+                Text(self.tableData.testContentList[index].date)
             }
+            .font(.system(size: 15))
+            .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
             .padding([.leading, .bottom])
         }
-        .cornerRadius(20)
         .background(Rectangle()
                         .foregroundColor(Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255)))
-                        .cornerRadius(20)
-                        .shadow(radius: 5,y:5)
+        .cornerRadius(20)
+        .shadow(radius: 5,x:3,y:3)
                         
     }
         

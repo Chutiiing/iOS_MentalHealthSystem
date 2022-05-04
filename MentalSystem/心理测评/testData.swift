@@ -27,6 +27,7 @@ class TestData:ObservableObject {
         self.testContentList = [];
     }
     
+    //利用testContent数组进行初始化
     init(data:[testContent]){
         self.testContentList = []
         for item in data {

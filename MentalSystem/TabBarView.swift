@@ -14,7 +14,7 @@ struct TabBarView: View {
     }
     
     func styleTabBar() {
-        UITabBar.appearance().isTranslucent = true;         //背景透明
+        //UITabBar.appearance().isTranslucent = true;         //背景透明
         UITabBar.appearance().unselectedItemTintColor = UIColor.systemGray;  //未选中的字体颜色
         UITabBar.appearance().layer.borderColor = UIColor.clear.cgColor;  //去掉边框
         UITabBar.appearance().clipsToBounds = true;
