@@ -34,7 +34,7 @@ struct TestHistoryView: View {
 }
 
 //删除记录
-func del(){
+func delTestHistory(){
     
 }
 
@@ -59,11 +59,10 @@ struct testHistoryItem:View {
                 .padding(.leading)
                 .foregroundColor(Color.black)
             HStack() {
-                //Image(systemName: "doc.text.magnifyingglass")
                 Text("测试结果:")
                 Text(self.tableData.testHistoryContentList[index].result)
                 Spacer()
-                Button(action: del) {
+                Button(action: delTestHistory) {
                     Text("删除")
                         .foregroundColor(.red)
                         .frame(width: 60,height: 25)

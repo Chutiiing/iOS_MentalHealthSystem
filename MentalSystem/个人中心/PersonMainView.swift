@@ -37,22 +37,26 @@ struct PersonMainView: View {
                         VStack(alignment:.leading,spacing: 15){
                             HStack() {
                                 Image(systemName: "person.text.rectangle")
+                                    .frame(width: 20)
                                 Text("学号:")
                                 Text("221801438")
                             }
                             HStack() {
                                 Image(systemName: "person")
-                                Text(" 姓名:")
+                                    .frame(width: 20)
+                                Text("姓名:")
                                 Text("小林")
                             }
                             HStack() {
                                 Image(systemName: "book")
+                                    .frame(width: 20)
                                 Text("学院:")
                                 Text("计算机与大数据学院")
                                     .frame(width:150,alignment:.leading)
                             }
                             HStack() {
                                 Image(systemName: "graduationcap")
+                                    .frame(width: 20)
                                 Text("专业:")
                                 Text("软件工程")
                                     .frame(width:150,alignment:.leading)
@@ -151,7 +155,7 @@ struct PersonMainView: View {
                             }
                             .padding(.horizontal)
                         }
-                        .sheet(isPresented: self.$showTipsCollectPage,content:{ Text("贴士收藏记录")})
+                        .sheet(isPresented: self.$showTipsCollectPage,content:{ TipsCollectedView()})
                         .accentColor(Color.black)
                         
                         //预约记录按钮
@@ -182,7 +186,7 @@ struct PersonMainView: View {
                             }
                             .padding(.horizontal)
                         }
-                        .sheet(isPresented: self.$showBookingPage,content:{ Text("预约记录")})
+                        .sheet(isPresented: self.$showBookingPage,content:{ BookingRecordView()})
                         .accentColor(Color.black)
                     }
                 }.padding(.horizontal)

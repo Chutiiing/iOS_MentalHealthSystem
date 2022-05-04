@@ -35,5 +35,4 @@ class TestData:ObservableObject {
             count += 1
         }
     }
-    
 }

@@ -14,13 +14,13 @@ struct TabBarView: View {
     }
     
     func styleTabBar() {
-        //UITabBar.appearance().isTranslucent = true;         //背景透明
+        UITabBar.appearance().isTranslucent = true;         //背景透明
         UITabBar.appearance().unselectedItemTintColor = UIColor.systemGray;  //未选中的字体颜色
         UITabBar.appearance().layer.borderColor = UIColor.clear.cgColor;  //去掉边框
         UITabBar.appearance().clipsToBounds = true;
     }
     
-    @State private var selectedIndex = 0;
+    @State private var selectedIndex = 0;     //标记被选中的是哪个页面
     
     private var navigationTitle:String {
         switch self.selectedIndex {
@@ -67,7 +67,7 @@ struct TabBarView: View {
             }
             .accentColor(Color(.sRGB, red: 119/255, green: 185/255, blue: 230/255))
             .navigationBarTitle(navigationTitle)
-        }.accentColor(Color.black)
+        }.accentColor(Color.black)     //默认颜色为黑色
     }
 }
 

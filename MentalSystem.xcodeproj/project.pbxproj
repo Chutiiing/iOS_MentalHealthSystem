@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
+		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
+		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
+		C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04262822B9EA00B68E38 /* BookingRecordData.swift */; };
 		C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */; };
 		C7A56CBB281A64F500846C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBA281A64F500846C78 /* Assets.xcassets */; };
 		C7A56CBE281A64F500846C78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBD281A64F500846C78 /* Preview Assets.xcassets */; };
@@ -42,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C77E04202822AB3100B68E38 /* TipsCollectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedView.swift; sourceTree = "<group>"; };
+		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
+		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
+		C77E04262822B9EA00B68E38 /* BookingRecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordData.swift; sourceTree = "<group>"; };
 		C7A56CB3281A64F200846C78 /* MentalSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemApp.swift; sourceTree = "<group>"; };
 		C7A56CBA281A64F500846C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -179,6 +187,10 @@
 				C7E791D0281BB433002DF4A4 /* PersonMainView.swift */,
 				C7CA178D2822644100AC5CA1 /* TestHistoryView.swift */,
 				C7CA178F28226A2F00AC5CA1 /* TestHistoryData.swift */,
+				C77E04202822AB3100B68E38 /* TipsCollectedView.swift */,
+				C77E04222822AFD800B68E38 /* TipsCollectedData.swift */,
+				C77E04242822B48B00B68E38 /* BookingRecordView.swift */,
+				C77E04262822B9EA00B68E38 /* BookingRecordData.swift */,
 			);
 			path = "个人中心";
 			sourceTree = "<group>";
@@ -313,12 +325,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */,
 				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
+				C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */,
 				C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */,
+				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
 				C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */,
 				C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */,
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
 				C7E791CB281BB230002DF4A4 /* TabBarView.swift in Sources */,
+				C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */,
 				C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */,
 				C7E791D1281BB433002DF4A4 /* PersonMainView.swift in Sources */,
 				C7E791D7281BCF9A002DF4A4 /* TableDetailView.swift in Sources */,

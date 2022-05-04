@@ -19,12 +19,13 @@ struct testHistoryContent:Identifiable {
 //@Published为了实现视图的实时刷新
 class TestHistoryData:ObservableObject {
     
-    @Published var testHistoryContentList:[testHistoryContent]     //量表内容列表
+    @Published var testHistoryContentList:[testHistoryContent]     //测评记录列表
     var count = 0     //用于计数
     
     init() {
         self.testHistoryContentList = [];
     }
+    
     //利用testHistoryContent进行初始化
     init(data:[testHistoryContent]){
         self.testHistoryContentList = []
@@ -33,5 +34,4 @@ class TestHistoryData:ObservableObject {
             count += 1
         }
     }
-    
 }
