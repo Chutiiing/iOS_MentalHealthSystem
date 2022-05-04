@@ -59,6 +59,7 @@ struct testHistoryItem:View {
                 .padding(.leading)
                 .foregroundColor(Color.black)
             HStack() {
+                //Image(systemName: "doc.text.magnifyingglass")
                 Text("测试结果:")
                 Text(self.tableData.testHistoryContentList[index].result)
                 Spacer()
@@ -72,8 +73,7 @@ struct testHistoryItem:View {
                 }
                 .padding(.trailing)
             }
-            .font(.system(size: 16))
-            .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
+            .font(.system(size: 17))
             .padding(.leading)
             HStack(){
                 Image(systemName: "clock")

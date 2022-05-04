@@ -67,7 +67,7 @@ struct TabBarView: View {
             }
             .accentColor(Color(.sRGB, red: 119/255, green: 185/255, blue: 230/255))
             .navigationBarTitle(navigationTitle)
-        }
+        }.accentColor(Color.black)
     }
 }
 
