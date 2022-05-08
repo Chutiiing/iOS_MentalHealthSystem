@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookingRecordView: View {
     
-    var bookingRecordData:BookingRecordData = BookingRecordData(data: [bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", date: "2022.04.26 15:00", room: "咨询室1"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", date: "2022.04.26 15:00", room: "咨询室2"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", date: "2022.04.26 15:00", room: "咨询室3")])
+    var bookingRecordData:BookingRecordData = BookingRecordData(data: [bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室2"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室3")])
     
     var body: some View {
         VStack(alignment:.leading) {
@@ -64,6 +64,13 @@ struct bookingRecordItem:View{
                 Text(self.tableData.bookingRecordList[index].abstract)
             }
             .padding(.horizontal)
+            
+            HStack() {
+                Image(systemName: "phone")
+                Text("联系电话:")
+                Text(self.tableData.bookingRecordList[index].phone)
+            }
+            .padding(.leading)
             
             HStack() {
                 Image(systemName: "calendar")

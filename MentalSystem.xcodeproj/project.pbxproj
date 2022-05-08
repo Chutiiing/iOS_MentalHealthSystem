@@ -11,6 +11,7 @@
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
 		C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04262822B9EA00B68E38 /* BookingRecordData.swift */; };
+		C77E042A282796E600B68E38 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E0429282796E600B68E38 /* LoginView.swift */; };
 		C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */; };
 		C7A56CBB281A64F500846C78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBA281A64F500846C78 /* Assets.xcassets */; };
 		C7A56CBE281A64F500846C78 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7A56CBD281A64F500846C78 /* Preview Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
 		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
 		C77E04262822B9EA00B68E38 /* BookingRecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordData.swift; sourceTree = "<group>"; };
+		C77E0429282796E600B68E38 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C7A56CB3281A64F200846C78 /* MentalSystem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MentalSystem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemApp.swift; sourceTree = "<group>"; };
 		C7A56CBA281A64F500846C78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C77E0428282796BE00B68E38 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				C77E0429282796E600B68E38 /* LoginView.swift */,
+			);
+			path = "登录注册";
+			sourceTree = "<group>";
+		};
 		C7A56CAA281A64F200846C78 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 		C7A56CB5281A64F200846C78 /* MentalSystem */ = {
 			isa = PBXGroup;
 			children = (
+				C77E0428282796BE00B68E38 /* 登录注册 */,
 				C7A56CE0281A6E4800846C78 /* 心理测评 */,
 				C7A56CE1281A6E5700846C78 /* 心理健康站 */,
 				C7A56CE2281A6E9400846C78 /* 情绪舒缓 */,
@@ -328,6 +339,7 @@
 				C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */,
 				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
 				C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */,
+				C77E042A282796E600B68E38 /* LoginView.swift in Sources */,
 				C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */,
 				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
 				C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */,

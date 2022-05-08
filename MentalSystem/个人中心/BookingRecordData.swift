@@ -11,6 +11,7 @@ struct bookingRecordContent:Identifiable {
     var id:Int = 0;
     var admin:String = "";
     var abstract:String = "";
+    var phone:String = "";
     var date:String = "";
     var room:String = "";
 }
@@ -30,7 +31,7 @@ class BookingRecordData:ObservableObject {
     init(data:[bookingRecordContent]){
         self.bookingRecordList = []
         for item in data {
-            self.bookingRecordList.append(bookingRecordContent(id: self.count, admin: item.admin, abstract: item.abstract, date: item.date, room: item.room))
+            self.bookingRecordList.append(bookingRecordContent(id: self.count, admin: item.admin, abstract: item.abstract, phone: item.phone, date: item.date, room: item.room))
             count += 1
         }
     }
