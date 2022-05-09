@@ -71,6 +71,12 @@ struct MusicPlayer:View{
                 
                 //倒退15s
                 Button(action:{
+                    //-15
+                    let decrease = self.player.currentTime - 15
+                    
+                    if decrease > 0{
+                        self.player.currentTime -= 15
+                    }
                     
                     self.player.currentTime -= 15
                     
@@ -103,6 +109,7 @@ struct MusicPlayer:View{
                 
                 //前进15s
                 Button(action:{
+                    //+15
                     let increase = self.player.currentTime + 15
                     
                     if increase < self.player.duration {
