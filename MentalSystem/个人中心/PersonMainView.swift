@@ -90,7 +90,7 @@ struct PersonMainView: View {
                 //功能列表
                 ZStack{
                     Rectangle()
-                        .frame(height: 250)
+                        .frame(height: 200)
                         .foregroundColor(Color.white)
                         .cornerRadius(10)
                         .opacity(0.95)

@@ -95,8 +95,6 @@ struct testItem: View {
         .shadow(radius: 5,x:3,y:3)
                         
     }
-        
-    
 }
 
 struct TestMainView_Previews: PreviewProvider {
