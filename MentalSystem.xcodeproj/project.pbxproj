@@ -22,6 +22,8 @@
 		C7A56CD2281A64F500846C78 /* MentalSystemUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CD1281A64F500846C78 /* MentalSystemUITests.swift */; };
 		C7A56CD4281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */; };
 		C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CE4281A6EDB00846C78 /* TestMainView.swift */; };
+		C7AF7163282A4AC000236EA5 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF7162282A4AC000236EA5 /* BookingView.swift */; };
+		C7AF7165282A4C1400236EA5 /* BookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF7164282A4C1400236EA5 /* BookingData.swift */; };
 		C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA178D2822644100AC5CA1 /* TestHistoryView.swift */; };
 		C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA178F28226A2F00AC5CA1 /* TestHistoryData.swift */; };
 		C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791C8281AC7DE002DF4A4 /* TestData.swift */; };
@@ -68,6 +70,8 @@
 		C7A56CD1281A64F500846C78 /* MentalSystemUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemUITests.swift; sourceTree = "<group>"; };
 		C7A56CD3281A64F500846C78 /* MentalSystemUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentalSystemUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C7A56CE4281A6EDB00846C78 /* TestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMainView.swift; sourceTree = "<group>"; };
+		C7AF7162282A4AC000236EA5 /* BookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingView.swift; sourceTree = "<group>"; };
+		C7AF7164282A4C1400236EA5 /* BookingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingData.swift; sourceTree = "<group>"; };
 		C7CA178D2822644100AC5CA1 /* TestHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistoryView.swift; sourceTree = "<group>"; };
 		C7CA178F28226A2F00AC5CA1 /* TestHistoryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHistoryData.swift; sourceTree = "<group>"; };
 		C7E791C8281AC7DE002DF4A4 /* TestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestData.swift; sourceTree = "<group>"; };
@@ -197,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				C7E791CC281BB414002DF4A4 /* StationMainView.swift */,
+				C7AF7162282A4AC000236EA5 /* BookingView.swift */,
+				C7AF7164282A4C1400236EA5 /* BookingData.swift */,
 			);
 			path = "心理健康站";
 			sourceTree = "<group>";
@@ -356,12 +362,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AF7163282A4AC000236EA5 /* BookingView.swift in Sources */,
 				C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */,
 				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
 				C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */,
 				C77E042A282796E600B68E38 /* LoginView.swift in Sources */,
 				C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */,
 				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
+				C7AF7165282A4C1400236EA5 /* BookingData.swift in Sources */,
 				C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */,
 				C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */,
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,

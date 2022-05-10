@@ -190,12 +190,19 @@ struct PersonMainView: View {
                         .accentColor(Color.black)
                     }
                 }.padding(.horizontal)
+                
+                Button(action:{
+                    
+                }){
+                    Text("退出登录")
+                        .foregroundColor(.black)
+                        .background(Rectangle()
+                                        .frame(width:UIScreen.main.bounds.size.width/2,height:50)
+                                        .foregroundColor(Color.white)
+                                        .cornerRadius(10)
+                                        .opacity(0.95))
+                }.padding(.top)
             }
-            
-            
-            
-                
-                
         }
         
     }

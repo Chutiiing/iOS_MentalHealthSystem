@@ -11,7 +11,8 @@ import SwiftUI
 struct MentalSystemApp: App {
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            //TabBarView()
+            LoginView()
         }
     }
 }

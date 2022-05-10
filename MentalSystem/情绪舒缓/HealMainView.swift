@@ -26,7 +26,7 @@ struct MusicPlayer:View{
     @State var del = AVdelegate()
     
     var body: some View{
-        VStack(spacing:30) {
+        VStack(spacing:40) {
             //背景
             Image("森林")
                 .resizable()
@@ -66,7 +66,7 @@ struct MusicPlayer:View{
                         self.changeSongs()     //换歌曲
                     }
                 }){
-                    Image(systemName: "backward").font(.title)
+                    Image(systemName: "backward").font(.title2)
                 }
                 
                 //倒退15s
@@ -81,7 +81,7 @@ struct MusicPlayer:View{
                     self.player.currentTime -= 15
                     
                 }){
-                    Image(systemName: "gobackward.15").font(.title)
+                    Image(systemName: "gobackward.15").font(.title2)
                 }
                 
                 //暂停/播放
@@ -104,7 +104,7 @@ struct MusicPlayer:View{
                 }){
                     Image(systemName: self.playing && !self.finish ? "pause" : "play")
                         .frame(width:50,height: 50)
-                        .font(.system(size: 45))
+                        .font(.system(size: 40))
                 }
                 
                 //前进15s
@@ -116,7 +116,7 @@ struct MusicPlayer:View{
                         self.player.currentTime = increase
                     }
                 }){
-                    Image(systemName: "goforward.15").font(.title)
+                    Image(systemName: "goforward.15").font(.title2)
                 }
                 
                 //下一首
@@ -126,7 +126,7 @@ struct MusicPlayer:View{
                         self.changeSongs()    //换歌
                     }
                 }){
-                    Image(systemName: "forward").font(.title)
+                    Image(systemName: "forward").font(.title2)
                 }
             }
             .foregroundColor(.black)
