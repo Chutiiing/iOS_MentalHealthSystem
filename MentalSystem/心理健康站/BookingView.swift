@@ -9,21 +9,52 @@ import SwiftUI
 
 struct BookingView: View {
     
-    var bookingData:BookingData = BookingData(data: [bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室2"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室3")])
+    var bookingData:BookingData = BookingData(data: [bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.27 09:00", room: "咨询室1"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.27 15:00", room: "咨询室3")])
+    
+    @Binding var isPushed: Bool
     
     var body: some View {
-        ScrollView(.vertical,showsIndicators: true){
-            VStack(){
-                ForEach(self.bookingData.bookingList){item in
-                    bookingItem(index: item.id)
-                        .environmentObject(self.bookingData)
-                        .padding(.vertical, 5.0)
-                        .padding(.horizontal)
+        VStack {
+            //返回按钮
+            Button(action:{
+                self.isPushed = false
+            }){
+                HStack{
+                    Image(systemName: "chevron.left")
+                    Text("心理健康站")
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.top)
+            }
+            .foregroundColor(.black)
+            
+            HStack {
+                Image("花卉2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40)
+                Text("咨询室预约")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .padding(.top,10)
+                Spacer()
+            }
+            .padding(.leading)
+            
+            ScrollView(.vertical,showsIndicators: true){
+                VStack(){
+                    ForEach(self.bookingData.bookingList){item in
+                        bookingItem(index: item.id)
+                            .environmentObject(self.bookingData)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal)
+                    }
                 }
             }
         }
-        //.edgesIgnoringSafeArea(.top)   //忽略上方的安全距离
-        
+        .navigationBarHidden(true)
+
     }
 }
 
@@ -103,8 +134,8 @@ struct bookingItem: View {
     }
 }
 
-struct BookingView_Previews: PreviewProvider {
-    static var previews: some View {
-        BookingView()
-    }
-}
+//struct BookingView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BookingView()
+//    }
+//}

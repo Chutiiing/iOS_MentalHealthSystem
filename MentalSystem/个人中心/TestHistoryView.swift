@@ -9,15 +9,22 @@ import SwiftUI
 
 struct TestHistoryView: View {
     
-    @ObservedObject var testHistoryData:TestHistoryData = TestHistoryData(data: [testHistoryContent(title: "心理健康量表1", result: "良好", date: "2022.05.01"),testHistoryContent(title: "心理健康量表2", result: "良好", date: "2022.05.01"),testHistoryContent(title: "心理健康量表3", result: "良好", date: "2022.05.01")])
+    @ObservedObject var testHistoryData:TestHistoryData = TestHistoryData(data: [testHistoryContent(title: "心理压力测评表", result: "良好", date: "2022.05.03"),testHistoryContent(title: "焦虑自评量表 (SAS)", result: "良好", date: "2022.05.01"),testHistoryContent(title: "心理压力测评表", result: "良好", date: "2022.05.01")])
     
     var body: some View {
         VStack(alignment:.leading) {
-            Text("测评历史")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top,40)
-                .padding(.leading,30)
+            HStack {
+                Image("花2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50)
+                    .padding(.top,25)
+                    .padding(.leading,20)
+                Text("测评历史")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top,40)
+            }
             ScrollView(.vertical,showsIndicators: true){
                 VStack(){
                     ForEach(self.testHistoryData.testHistoryContentList){item in

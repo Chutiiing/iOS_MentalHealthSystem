@@ -9,15 +9,22 @@ import SwiftUI
 
 struct BookingRecordView: View {
     
-    var bookingRecordData:BookingRecordData = BookingRecordData(data: [bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室2"),bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室3")])
+    var bookingRecordData:BookingRecordData = BookingRecordData(data: [bookingRecordContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1")])
     
     var body: some View {
         VStack(alignment:.leading) {
-            Text("预约记录")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding(.top,40)
-                .padding(.leading,30)
+            HStack {
+                Image("花3")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 50)
+                    .padding(.top,25)
+                    .padding(.leading,20)
+                Text("预约记录")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding(.top,40)
+            }
             ScrollView(.vertical,showsIndicators: true){
                 VStack(){
                     ForEach(self.bookingRecordData.bookingRecordList){item in

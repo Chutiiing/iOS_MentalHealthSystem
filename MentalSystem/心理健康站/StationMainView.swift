@@ -8,30 +8,53 @@
 import SwiftUI
 
 struct StationMainView: View {
+    
+    @State var isPushed = false
+    
     var body: some View {
-        VStack(spacing:0) {
-            //小贴士
-            tipsView()
-                .padding(.top,30)
-            Spacer()
-            VStack(spacing:10){
-                HStack{
-                    Text("美好总会出现在下一个转弯")
-                        .foregroundColor(.gray)
+        VStack {
+            ZStack {
+                VStack(spacing:0) {
+                    //小贴士
+                    tipsView()
+                        .padding(.top,30)
+                    
+                    //线下咨询室按钮
+                    VStack(spacing:10){
+                        HStack{
+                            Text("美好总会出现在下一个转弯")
+                                .foregroundColor(.gray)
+                            Spacer()
+                        }
+                        //咨询室预约
+                        NavigationLink(destination:
+                                        BookingView(isPushed: self.$isPushed),
+                                       isActive: self.$isPushed)  {
+                            bookingButton()
+                                .foregroundColor(.black)
+                        }
+                    }
+                    .padding(.top,30)
                     Spacer()
                 }
-
-                //咨询室预约
-                NavigationLink(destination:{
-                    BookingView()
-                })  {
-                    bookingButton()
-                        .foregroundColor(.black)
+                .padding(.horizontal)
+                
+                VStack {
+                    HStack {
+                        Spacer()
+                        Image("花1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 100)
+                    }
+                    Spacer()
                 }
             }
-            Spacer()
+            Image("组合花")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: UIScreen.main.bounds.size.width)
         }
-        .padding(.horizontal)
     }
 }
 
@@ -46,16 +69,16 @@ struct tipsView:View{
                 .foregroundColor(Color(.sRGB, red: 133/255, green: 175/255, blue: 225/255))
             HStack{
                 Spacer()
-                Text("一些小贴士")
+                Text("Tips")
                     .font(.title2)
                     .fontWeight(.bold)
                 Spacer()
             }
             ScrollView(.vertical,showsIndicators: false){
-                Text("一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士一些心理健康贴士")
+                Text("有时候我们活的很累，并非生活过于刻薄，而是我们太容易被外界的氛围所感染，被他人的情绪所左右。行走在人群中，我们总是感觉有无数穿心夺肺的目光，有很多飞短流长的冷言，最终乱了心神，渐渐被缚于被自己编织的乱麻中。")
                     .foregroundColor(Color(.sRGB, red:50/255, green: 50/255, blue: 50/255))
             }
-            .frame(height: 230)
+            .frame(height: 135)
             .padding(.horizontal)
             //收藏按钮
             Button(action: {
