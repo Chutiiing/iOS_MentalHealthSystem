@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 struct bookingRecordContent:Identifiable {
     var id:Int = 0;

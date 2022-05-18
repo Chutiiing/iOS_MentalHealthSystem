@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 struct bookingContent:Identifiable {
     var id:Int = 0;
@@ -23,16 +25,33 @@ class BookingData:ObservableObject {
     @Published var bookingList:[bookingContent]     //预约列表
     var count = 0     //用于计数
     
-    init() {
-        self.bookingList = [];
-    }
-    
     //利用bookingContent进行初始化
-    init(data:[bookingContent]){
+    init(){
+        
         self.bookingList = []
-        for item in data {
-            self.bookingList.append(bookingContent(id: self.count, admin: item.admin, abstract: item.abstract, phone: item.phone, date: item.date, room: item.room))
-            count += 1
+        
+        //请求查询列表
+        AF.request("http://192.168.1.109:9090/booking/findBooking").responseJSON{ (response) in
+            
+            switch response.result {
+            //成功接收
+            case .success(let data):
+                //获取jason
+                let json = JSON(data)
+                
+                for temp in json{
+                    self.bookingList.append(bookingContent(id: self.count, admin: temp.1["username"].stringValue, abstract: temp.1["introduction"].stringValue, phone: temp.1["phone"].stringValue, date: temp.1["time"].stringValue, room: temp.1["room"].stringValue))
+                    self.count += 1
+                }
+                
+                print(self.bookingList)
+                
+                break
+                
+            case .failure(let error):
+                print("错误信息:\(error)")
+                break
+            }
         }
     }
 }

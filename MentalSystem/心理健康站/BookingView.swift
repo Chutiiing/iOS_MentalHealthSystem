@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookingView: View {
     
-    var bookingData:BookingData = BookingData(data: [bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.26 15:00", room: "咨询室1"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.27 09:00", room: "咨询室1"),bookingContent(admin: "admin", abstract: "一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介一些教师的简介", phone:"123456", date: "2022.04.27 15:00", room: "咨询室3")])
+    @ObservedObject var bookingData:BookingData = BookingData()
     
     @Binding var isPushed: Bool
     
@@ -54,6 +54,10 @@ struct BookingView: View {
             }
         }
         .navigationBarHidden(true)
+        .onAppear{
+            print("???")
+            print(self.bookingData.bookingList)
+        }
 
     }
 }

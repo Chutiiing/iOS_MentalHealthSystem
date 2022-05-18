@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C711F55528353AC600779B84 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C711F55428353AC600779B84 /* SwiftyJSON */; };
 		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
@@ -24,6 +25,7 @@
 		C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A56CE4281A6EDB00846C78 /* TestMainView.swift */; };
 		C7AF7163282A4AC000236EA5 /* BookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF7162282A4AC000236EA5 /* BookingView.swift */; };
 		C7AF7165282A4C1400236EA5 /* BookingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AF7164282A4C1400236EA5 /* BookingData.swift */; };
+		C7AF71682834D9A900236EA5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C7AF71672834D9A900236EA5 /* Alamofire */; };
 		C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA178D2822644100AC5CA1 /* TestHistoryView.swift */; };
 		C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CA178F28226A2F00AC5CA1 /* TestHistoryData.swift */; };
 		C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E791C8281AC7DE002DF4A4 /* TestData.swift */; };
@@ -87,6 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C711F55528353AC600779B84 /* SwiftyJSON in Frameworks */,
+				C7AF71682834D9A900236EA5 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +249,10 @@
 			dependencies = (
 			);
 			name = MentalSystem;
+			packageProductDependencies = (
+				C7AF71672834D9A900236EA5 /* Alamofire */,
+				C711F55428353AC600779B84 /* SwiftyJSON */,
+			);
 			productName = MentalSystem;
 			productReference = C7A56CB3281A64F200846C78 /* MentalSystem.app */;
 			productType = "com.apple.product-type.application";
@@ -317,6 +325,10 @@
 				Base,
 			);
 			mainGroup = C7A56CAA281A64F200846C78;
+			packageReferences = (
+				C7AF71662834D9A900236EA5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				C711F55328353AC600779B84 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = C7A56CB4281A64F200846C78 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -705,6 +717,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C711F55328353AC600779B84 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		C7AF71662834D9A900236EA5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C711F55428353AC600779B84 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C711F55328353AC600779B84 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		C7AF71672834D9A900236EA5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7AF71662834D9A900236EA5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7A56CAB281A64F200846C78 /* Project object */;
 }

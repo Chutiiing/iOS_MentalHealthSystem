@@ -51,7 +51,7 @@ struct TableDetailView: View {
                                     .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                                 Text("发布时间").font(.system(size: 15))
                                     .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
-                                Text(self.data.date).font(.system(size: 15))
+                                Text(self.data.time).font(.system(size: 15))
                                     .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                             }
                         }
@@ -69,7 +69,7 @@ struct TableDetailView: View {
                             Text("测评简介：")
                                 .font(.system(size: 18))
                                 .fontWeight(.bold)
-                            Text(self.data.abstract)
+                            Text(self.data.introduction)
                                 .foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
                             Text("注意事项：")
                                 .font(.system(size: 18))
