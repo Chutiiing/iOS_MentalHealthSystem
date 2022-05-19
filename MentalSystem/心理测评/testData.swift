@@ -12,6 +12,7 @@ import SwiftyJSON
 //量表内容
 struct testContent:Identifiable {
     var id:Int = 0              //标识
+    var tableid:Int = 0         //量表标识
     var title:String = ""       //量表名称
     var introduction:String = ""    //量表简介
     var admin:String = ""       //发布人
@@ -30,7 +31,7 @@ class TestData:ObservableObject {
         self.testContentList = []
         
         //请求查询列表
-        AF.request("http://192.168.1.109:9090/test/findAll").responseJSON{ (response) in
+        AF.request(RequestURL.init().url+"test/findAll").responseJSON{ (response) in
             
             switch response.result {
             //成功接收
@@ -39,7 +40,8 @@ class TestData:ObservableObject {
                 let json = JSON(data)
                 
                 for temp in json{
-                    self.testContentList.append(testContent(id:temp.1["tableid"].intValue-1,title: temp.1["title"].stringValue, introduction: temp.1["introduction"].stringValue, admin:temp.1["admin"].stringValue, time: temp.1["time"].stringValue))
+                    self.testContentList.append(testContent(id:self.count,tableid:temp.1["tableid"].intValue,title: temp.1["title"].stringValue, introduction: temp.1["introduction"].stringValue, admin:temp.1["admin"].stringValue, time: temp.1["time"].stringValue))
+                    self.count += 1;
                 }
                 
                 print(self.testContentList)

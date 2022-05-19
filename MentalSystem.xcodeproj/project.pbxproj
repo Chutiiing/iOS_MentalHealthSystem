@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C711F55528353AC600779B84 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C711F55428353AC600779B84 /* SwiftyJSON */; };
+		C711F5572836771400779B84 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5562836771400779B84 /* RequestURL.swift */; };
 		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C711F5562836771400779B84 /* RequestURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
 		C77E04202822AB3100B68E38 /* TipsCollectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedView.swift; sourceTree = "<group>"; };
 		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
 		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				C7A56CE3281A6E9C00846C78 /* 个人中心 */,
 				C7A56CB6281A64F200846C78 /* MentalSystemApp.swift */,
 				C7E791CA281BB230002DF4A4 /* TabBarView.swift */,
+				C711F5562836771400779B84 /* RequestURL.swift */,
 				C7A56CBA281A64F500846C78 /* Assets.xcassets */,
 				C7A56CBC281A64F500846C78 /* Preview Content */,
 			);
@@ -379,6 +382,7 @@
 				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
 				C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */,
 				C77E042A282796E600B68E38 /* LoginView.swift in Sources */,
+				C711F5572836771400779B84 /* RequestURL.swift in Sources */,
 				C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */,
 				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
 				C7AF7165282A4C1400236EA5 /* BookingData.swift in Sources */,

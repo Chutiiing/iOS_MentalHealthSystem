@@ -11,6 +11,7 @@ import SwiftyJSON
 
 struct bookingContent:Identifiable {
     var id:Int = 0;
+    var bookingID: Int = 0;
     var admin:String = "";
     var abstract:String = "";
     var phone:String = "";
@@ -31,7 +32,7 @@ class BookingData:ObservableObject {
         self.bookingList = []
         
         //请求查询列表
-        AF.request("http://192.168.1.109:9090/booking/findBooking").responseJSON{ (response) in
+        AF.request(RequestURL.init().url+"booking/findBooking").responseJSON{ (response) in
             
             switch response.result {
             //成功接收
@@ -40,7 +41,7 @@ class BookingData:ObservableObject {
                 let json = JSON(data)
                 
                 for temp in json{
-                    self.bookingList.append(bookingContent(id: self.count, admin: temp.1["username"].stringValue, abstract: temp.1["introduction"].stringValue, phone: temp.1["phone"].stringValue, date: temp.1["time"].stringValue, room: temp.1["room"].stringValue))
+                    self.bookingList.append(bookingContent(id: self.count,bookingID:temp.1["id"].intValue,admin: temp.1["username"].stringValue, abstract: temp.1["introduction"].stringValue, phone: temp.1["phone"].stringValue, date: temp.1["time"].stringValue, room: temp.1["room"].stringValue))
                     self.count += 1
                 }
                 
