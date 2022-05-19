@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		C711F55528353AC600779B84 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C711F55428353AC600779B84 /* SwiftyJSON */; };
 		C711F5572836771400779B84 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5562836771400779B84 /* RequestURL.swift */; };
+		C711F5592836A2A400779B84 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5582836A2A400779B84 /* LoginView.swift */; };
+		C711F55B2836A2BA00779B84 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F55A2836A2BA00779B84 /* SignInView.swift */; };
 		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
 		C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04262822B9EA00B68E38 /* BookingRecordData.swift */; };
-		C77E042A282796E600B68E38 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E0429282796E600B68E38 /* LoginView.swift */; };
+		C77E042A282796E600B68E38 /* LoginMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E0429282796E600B68E38 /* LoginMainView.swift */; };
 		C77E042F2828EECD00B68E38 /* music2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C77E042C2828EECC00B68E38 /* music2.mp3 */; };
 		C77E04302828EECD00B68E38 /* music3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C77E042D2828EECC00B68E38 /* music3.mp3 */; };
 		C77E04312828EECD00B68E38 /* music1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C77E042E2828EECC00B68E38 /* music1.mp3 */; };
@@ -56,11 +58,13 @@
 
 /* Begin PBXFileReference section */
 		C711F5562836771400779B84 /* RequestURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
+		C711F5582836A2A400779B84 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C711F55A2836A2BA00779B84 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		C77E04202822AB3100B68E38 /* TipsCollectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedView.swift; sourceTree = "<group>"; };
 		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
 		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
 		C77E04262822B9EA00B68E38 /* BookingRecordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordData.swift; sourceTree = "<group>"; };
-		C77E0429282796E600B68E38 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		C77E0429282796E600B68E38 /* LoginMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMainView.swift; sourceTree = "<group>"; };
 		C77E042C2828EECC00B68E38 /* music2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music2.mp3; sourceTree = "<group>"; };
 		C77E042D2828EECC00B68E38 /* music3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music3.mp3; sourceTree = "<group>"; };
 		C77E042E2828EECC00B68E38 /* music1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = music1.mp3; sourceTree = "<group>"; };
@@ -116,7 +120,9 @@
 		C77E0428282796BE00B68E38 /* 登录注册 */ = {
 			isa = PBXGroup;
 			children = (
-				C77E0429282796E600B68E38 /* LoginView.swift */,
+				C77E0429282796E600B68E38 /* LoginMainView.swift */,
+				C711F5582836A2A400779B84 /* LoginView.swift */,
+				C711F55A2836A2BA00779B84 /* SignInView.swift */,
 			);
 			path = "登录注册";
 			sourceTree = "<group>";
@@ -381,7 +387,7 @@
 				C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */,
 				C7E791CD281BB414002DF4A4 /* StationMainView.swift in Sources */,
 				C77E04272822B9EA00B68E38 /* BookingRecordData.swift in Sources */,
-				C77E042A282796E600B68E38 /* LoginView.swift in Sources */,
+				C77E042A282796E600B68E38 /* LoginMainView.swift in Sources */,
 				C711F5572836771400779B84 /* RequestURL.swift in Sources */,
 				C7CA178E2822644100AC5CA1 /* TestHistoryView.swift in Sources */,
 				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
@@ -391,8 +397,10 @@
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
 				C7E791CB281BB230002DF4A4 /* TabBarView.swift in Sources */,
 				C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */,
+				C711F55B2836A2BA00779B84 /* SignInView.swift in Sources */,
 				C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */,
 				C7E791D1281BB433002DF4A4 /* PersonMainView.swift in Sources */,
+				C711F5592836A2A400779B84 /* LoginView.swift in Sources */,
 				C7E791D7281BCF9A002DF4A4 /* TableDetailView.swift in Sources */,
 				C7E791CF281BB424002DF4A4 /* HealMainView.swift in Sources */,
 			);

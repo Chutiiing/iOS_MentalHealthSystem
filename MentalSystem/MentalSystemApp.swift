@@ -12,7 +12,7 @@ struct MentalSystemApp: App {
     var body: some Scene {
         WindowGroup {
             //TabBarView()
-            LoginView()
+            LoginMainView()
         }
     }
 }
