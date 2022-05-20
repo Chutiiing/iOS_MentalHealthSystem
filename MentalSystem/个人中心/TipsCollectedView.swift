@@ -88,6 +88,7 @@ struct tipsCollectedItem:View {
                         }
                         
                     }
+                    
                 }) {
                     Image(systemName: "xmark")
                         .foregroundColor(Color.red)

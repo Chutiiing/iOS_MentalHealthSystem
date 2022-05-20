@@ -21,6 +21,7 @@ struct PersonMainView: View {
     @State var major:String = "";      //专业
     @State var state:String = "";      //心理状态
     
+    @State var confirmDeletion = false;
     
     var body: some View {
         ZStack{
@@ -200,7 +201,7 @@ struct PersonMainView: View {
                 }.padding(.horizontal)
                 
                 Button(action:{
-                    
+                    self.confirmDeletion = true
                 }){
                     Text("退出登录")
                         .foregroundColor(.black)
@@ -209,7 +210,9 @@ struct PersonMainView: View {
                                         .foregroundColor(Color.white)
                                         .cornerRadius(10)
                                         .opacity(0.95))
-                }.padding(.top)
+                }
+                .padding(.top)
+                
             }
         }
         .onAppear{
@@ -242,7 +245,32 @@ struct PersonMainView: View {
                     break
                 }
             }
+        }
+        .confirmationDialog(                    // << here !!
+            "是否确认要退出登录？",
+            isPresented: $confirmDeletion,
+            titleVisibility: .visible
+        ) {
+            Button("退出", role: .destructive) {
+                
+                DispatchQueue.main.async {
+                    Task {
+                        //清除缓存
+                        let user = UserDefaults.standard
+                        user.removeObject(forKey: "sno")
+                        user.removeObject(forKey: "isSign")
+                        
+                        //界面跳转
+                        if let window = UIApplication.shared.windows.first
+                        {
+                            window.rootViewController = UIHostingController(rootView: LoginMainView())
+                            window.makeKeyAndVisible()
+                        }
+                    }
+                }
+            }
             
+            Button("取消", role: .cancel) {}
         }
     }
 }

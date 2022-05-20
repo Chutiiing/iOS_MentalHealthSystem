@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct BookingView: View {
     
@@ -71,6 +73,16 @@ struct bookingItem: View {
     //是否预约
     @State var isBooking = false
     
+    //提示信息
+    struct AlertData:Identifiable{
+        var id = UUID()
+        var message:String
+    }
+    //是否展示提示
+    @State var showAlert = false
+    //提示信息实例
+    @State var alertData:AlertData?
+    
     var body: some View {
         VStack(alignment: .leading,spacing: 15) {
             Circle()
@@ -117,7 +129,45 @@ struct bookingItem: View {
             HStack{
                 Spacer()
                 Button(action:{
-                    self.isBooking = !self.isBooking
+                    //未预约点击则为需要预约
+                    if !self.isBooking{
+                        let user = UserDefaults.standard
+                        //存取用户信息
+                        let stu:String = user.string(forKey: "sno") ?? ""
+
+                        //请求查询列表
+                        AF.request(RequestURL.init().url+"booking/updateBooking/"+stu+"/"+String(self.tableData.bookingList[index].bookingID),
+                                   method: .post,
+                                   encoding: URLEncoding.default).responseJSON{ (response) in
+                            
+                            print(response.request?.url)
+                            
+                            switch response.result {
+                            //成功接收
+                            case .success(let data):
+                                
+                                //获取jason
+                                let res = JSON(data).boolValue
+                                
+                                print(res)
+                                
+                                //预约成功
+                                if res {
+                                    self.isBooking = true;
+                                }
+                                
+                                break
+                            //错误
+                            case .failure(let error):
+                                print("错误信息:\(error)")
+                                break
+                            }
+                        }
+                    }
+                    else {
+                        self.alertData = AlertData(message: "无法重复预约，详情在个人中心查看")
+                    }
+                    
                 }){
                     Text(self.isBooking ? "已预约" : "预约")
                         .foregroundColor(self.isBooking ? .gray : .blue)
@@ -127,6 +177,11 @@ struct bookingItem: View {
                         .cornerRadius(10)
                 }
                 .padding(.bottom)
+                .alert(item: $alertData){ alertData in
+            
+                    Alert(title: Text("提示"), message: Text(alertData.message), dismissButton: .default(Text("确认")))
+                    
+                }
                 Spacer()
             }
         }
