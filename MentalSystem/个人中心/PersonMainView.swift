@@ -246,7 +246,7 @@ struct PersonMainView: View {
                 }
             }
         }
-        .confirmationDialog(                    // << here !!
+        .confirmationDialog(                    
             "是否确认要退出登录？",
             isPresented: $confirmDeletion,
             titleVisibility: .visible

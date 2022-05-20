@@ -26,7 +26,6 @@ class TestData:ObservableObject {
     @Published var testContentList:[testContent]     //量表内容列表
     var count = 0     //用于计数
     
-    //利用testContent数组进行初始化
     init(){
         self.testContentList = []
         

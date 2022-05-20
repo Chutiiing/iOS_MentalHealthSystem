@@ -56,11 +56,6 @@ struct BookingView: View {
             }
         }
         .navigationBarHidden(true)
-        .onAppear{
-            print("???")
-            print(self.bookingData.bookingList)
-        }
-
     }
 }
 

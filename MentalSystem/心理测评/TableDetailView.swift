@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TableDetailView: View {
     
-    //子视图使用了副视图的类
-    //@EnvironmentObject保证刷新
     var data:testContent
+    
+    @State var isPushed = false
     
     var body: some View {
         
@@ -93,22 +93,21 @@ struct TableDetailView: View {
             }
             .edgesIgnoringSafeArea(.top)   //忽略上方的安全距离
             
-            
-            
-            Button(action: startTest) {
+            NavigationLink(destination:
+                            WriteTestView(title: self.data.title)){
                 Text("开始测评")
+                    .foregroundColor(Color.white)
+                    .frame(width: UIScreen.main.bounds.size.width/2+20, height: 50, alignment: .center)
+                    .background(Color(.sRGB, red: 133/255, green: 175/255, blue: 235/255))
+                    .cornerRadius(15)
             }
-            .foregroundColor(Color.white)
-            .frame(width: UIScreen.main.bounds.size.width/2, height: 50, alignment: .center)
-            .background(Color(.sRGB, red: 133/255, green: 175/255, blue: 235/255))
-            .cornerRadius(15)
+        }
+        .onAppear{
+            //存入tableid
+            let user = UserDefaults.standard
+            user.set(self.data.tableid, forKey: "tableid")
         }
     }
-}
-
-//开始测评
-func startTest() {
-    
 }
 
 //预览界面
