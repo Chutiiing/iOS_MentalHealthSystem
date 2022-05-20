@@ -6,18 +6,33 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct StationMainView: View {
     
     @State var isPushed = false
     
+    //贴士数据
+    @ObservedObject var tableData:TipsData = TipsData()
+    
     var body: some View {
         VStack {
             ZStack {
                 VStack(spacing:0) {
+                    
                     //小贴士
-                    tipsView()
-                        .padding(.top,30)
+                    ScrollView(.horizontal,showsIndicators: false){
+                        HStack(){
+                            ForEach(self.tableData.tipsContentList){item in
+                                tipsView(index: item.id)
+                                    .environmentObject(self.tableData)
+                                    .padding(.vertical, 5.0)
+                                    .padding(.horizontal,5)
+                            }
+                        }
+                    }
+                    .padding(.top,30)
                     
                     //线下咨询室按钮
                     VStack(spacing:10){
@@ -60,7 +75,13 @@ struct StationMainView: View {
 
 struct tipsView:View{
     
-    @State var isStar = false    //判断是否收藏
+    @State var isStar = false    //判断是否收藏,默认未收藏
+    
+    //子视图使用了副视图的类
+    //@EnvironmentObject保证刷新
+    @EnvironmentObject var tableData:TipsData
+    //下标
+    var index:Int
     
     var body: some View{
         VStack(spacing:20) {
@@ -75,14 +96,66 @@ struct tipsView:View{
                 Spacer()
             }
             ScrollView(.vertical,showsIndicators: false){
-                Text("有时候我们活的很累，并非生活过于刻薄，而是我们太容易被外界的氛围所感染，被他人的情绪所左右。行走在人群中，我们总是感觉有无数穿心夺肺的目光，有很多飞短流长的冷言，最终乱了心神，渐渐被缚于被自己编织的乱麻中。")
+                Text(self.tableData.tipsContentList[index].content)
                     .foregroundColor(Color(.sRGB, red:50/255, green: 50/255, blue: 50/255))
             }
             .frame(height: 135)
             .padding(.horizontal)
             //收藏按钮
             Button(action: {
-                self.isStar = !self.isStar
+                let user = UserDefaults.standard
+                //存取用户信息
+                let stu:String = user.string(forKey: "sno") ?? ""
+                //目前为收藏，点击按钮则取消收藏
+                if self.isStar {
+                    AF.request(RequestURL.init().url+"tips/delStar",
+                               method: .delete,
+                               parameters: ["sno":stu,"tipsId":String(self.tableData.tipsContentList[index].tipsId)],
+                               encoding: JSONEncoding.default).responseJSON{ (response) in
+                        switch response.result {
+                        //成功接收
+                        case .success(let data):
+                            
+                            let res = JSON(data).boolValue
+                            
+                            if res {
+                                self.isStar = false
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print("错误信息:\(error)")
+                            break
+                        }
+                        
+                    }
+                }
+                //目前未收藏，则为收藏
+                else{
+                    AF.request(RequestURL.init().url+"tips/star",
+                               method: .post,
+                               parameters: ["sno":stu,"tipsId":String(self.tableData.tipsContentList[index].tipsId)],
+                               encoding: JSONEncoding.default).responseJSON{ (response) in
+                        switch response.result {
+                        //成功接收
+                        case .success(let data):
+                            
+                            let res = JSON(data).boolValue
+                            
+                            if res {
+                                self.isStar = true
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print("错误信息:\(error)")
+                            break
+                        }
+                        
+                    }
+                }
+                
+                //self.isStar = !self.isStar
             }){
                 Image(systemName: self.isStar ? "star.fill" : "star")
                     .font(.title2)
@@ -90,10 +163,44 @@ struct tipsView:View{
             }
             .padding(.bottom)
         }
+        .frame(width: UIScreen.main.bounds.size.width - 40)
         .background(Rectangle()
                         .foregroundColor(.white))
         .cornerRadius(10)
-        .shadow(radius: 5,x:3,y:3)
+        .shadow(radius: 2)
+        .onAppear{
+            
+            let user = UserDefaults.standard
+            //存取用户信息
+            let stu:String = user.string(forKey: "sno") ?? ""
+
+            //请求查询列表
+            AF.request(RequestURL.init().url+"tips/isStar/"+stu+"/"+String(self.tableData.tipsContentList[index].tipsId),
+                       encoding: URLEncoding.default).responseJSON{ (response) in
+                
+                switch response.result {
+                //成功接收
+                case .success(let data):
+                    
+                    //获取jason
+                    let res = JSON(data).boolValue
+                    
+                    //表示收藏过
+                    if res {
+                        self.isStar = true;
+                    }
+                    else {
+                        self.isStar = false
+                    }
+                    
+                    break
+                //错误
+                case .failure(let error):
+                    print("错误信息:\(error)")
+                    break
+                }
+            }
+        }
     }
 }
 
@@ -114,7 +221,7 @@ struct bookingButton:View{
         .background(Rectangle()
                         .foregroundColor(.white))
         .cornerRadius(10)
-        .shadow(radius: 5,x:3,y:3)
+        .shadow(radius:2)
     }
 }
 

@@ -45,7 +45,8 @@ class BookingData:ObservableObject {
                     self.count += 1
                 }
                 
-                print(self.bookingList)
+                //按照由近到远时间顺序
+                self.sort()
                 
                 break
                 
@@ -53,6 +54,17 @@ class BookingData:ObservableObject {
                 print("错误信息:\(error)")
                 break
             }
+        }
+    }
+    
+    //排序
+    func sort(){
+        self.bookingList.sort(by: {(data1,data2) in
+            return data1.date < data2.date
+        })
+        //下标重新更新
+        for i in 0..<self.bookingList.count {
+            self.bookingList[i].id = i
         }
     }
 }

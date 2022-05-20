@@ -44,7 +44,8 @@ class TestData:ObservableObject {
                     self.count += 1;
                 }
                 
-                print(self.testContentList)
+                //按时间顺序排序
+                self.sort()
                 
                 break
                 
@@ -52,6 +53,17 @@ class TestData:ObservableObject {
                 print("错误信息:\(error)")
                 break
             }
+        }
+    }
+    
+    //排序
+    func sort(){
+        self.testContentList.sort(by: {(data1,data2) in
+            return data1.time > data2.time
+        })
+        //下标重新更新
+        for i in 0..<self.testContentList.count {
+            self.testContentList[i].id = i
         }
     }
 }

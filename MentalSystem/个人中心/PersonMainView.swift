@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct PersonMainView: View {
     
     @State var showTestHistoryPage = false;       //记录历史收藏记录页面是否打开
     @State var showTipsCollectPage = false;       //记录贴士收藏界面是否打开
     @State var showBookingPage = false;           //记录预约信息界面是否打开
+    
+    @State var sno: String = "";     //学号
+    @State var name: String = "";     //姓名
+    @State var academy:String = "";   //学院
+    @State var major:String = "";      //专业
+    @State var state:String = "";      //心理状态
     
     
     var body: some View {
@@ -39,26 +47,26 @@ struct PersonMainView: View {
                                 Image(systemName: "person.text.rectangle")
                                     .frame(width: 20)
                                 Text("学号:")
-                                Text("221801438")
+                                Text(self.sno)
                             }
                             HStack() {
                                 Image(systemName: "person")
                                     .frame(width: 20)
                                 Text("姓名:")
-                                Text("小林")
+                                Text(self.name)
                             }
                             HStack() {
                                 Image(systemName: "book")
                                     .frame(width: 20)
                                 Text("学院:")
-                                Text("计算机与大数据学院")
+                                Text(self.academy)
                                     .frame(width:150,alignment:.leading)
                             }
                             HStack() {
                                 Image(systemName: "graduationcap")
                                     .frame(width: 20)
                                 Text("专业:")
-                                Text("软件工程")
+                                Text(self.major)
                                     .frame(width:150,alignment:.leading)
                             }
                         }.foregroundColor(Color(.sRGB, red:90/255, green: 90/255, blue: 90/255))
@@ -77,7 +85,7 @@ struct PersonMainView: View {
                         Text("心理状态：")
                             .font(.system(size: 20))
                             .fontWeight(.bold)
-                        Text("良好")
+                        Text(self.state)
                             .font(.system(size: 20))
                             .fontWeight(.bold)
                         Image("钓鱼北极熊")
@@ -204,7 +212,38 @@ struct PersonMainView: View {
                 }.padding(.top)
             }
         }
-        
+        .onAppear{
+            
+            let user = UserDefaults.standard
+            //存取用户信息
+            let stu:String = user.string(forKey: "sno") ?? ""
+
+            //请求查询列表
+            AF.request(RequestURL.init().url+"students/search/"+stu,
+                       encoding: URLEncoding.default).responseJSON{ (response) in
+                switch response.result {
+                //成功接收
+                case .success(let data):
+                    
+                    //获取jason
+                    let res = JSON(data)
+                    
+                    //赋值
+                    self.sno = res["sno"].stringValue
+                    self.name = res["name"].stringValue
+                    self.academy = res["academy"].stringValue
+                    self.major = res["major"].stringValue
+                    self.state = res["state"].stringValue
+                    
+                    break
+                //错误
+                case .failure(let error):
+                    print("错误信息:\(error)")
+                    break
+                }
+            }
+            
+        }
     }
 }
 

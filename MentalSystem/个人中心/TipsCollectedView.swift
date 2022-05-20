@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct TipsCollectedView: View {
     
-    @ObservedObject var tipsCollectedData:TipsCollectedData = TipsCollectedData(data: [tipsCollectedContent(tipsContent: "有时候我们活的很累，并非生活过于刻薄，而是我们太容易被外界的氛围所感染，被他人的情绪所左右。行走在人群中，我们总是感觉有无数穿心夺肺的目光，有很多飞短流长的冷言，最终乱了心神，渐渐被缚于被自己编织的乱麻中。", date: "2022.04.26"),tipsCollectedContent(tipsContent: "无人问津也好，技不如人也罢。你都要试着安静下来，去做你该做的事。而不是让内心烦躁焦虑，毁掉你本就不多的热情定力。", date: "2022.05.01"),tipsCollectedContent(tipsContent: "人生这条路很长，未来如星辰大海般璀璨，不必踌躇与过去的半亩方塘。那些所谓的遗憾 可能是一种成长，那些曾经受过的伤 终会化作照亮前路的光。", date: "2022.05.01")])
+    @ObservedObject var tipsCollectedData:TipsCollectedData = TipsCollectedData()
     
     var body: some View {
         VStack(alignment:.leading) {
@@ -29,20 +31,19 @@ struct TipsCollectedView: View {
             ScrollView(.vertical,showsIndicators: true){
                 VStack(){
                     ForEach(self.tipsCollectedData.tipsCollectedList){item in
-                        tipsCollectedItem(index: item.id)
-                            .environmentObject(self.tipsCollectedData)
-                            .padding(.vertical, 5.0)
-                            .padding(.horizontal)
+                        //没有被删掉
+                        if !item.deleted{
+                            tipsCollectedItem(index: item.id)
+                                .environmentObject(self.tipsCollectedData)
+                                .padding(.vertical, 5.0)
+                                .padding(.horizontal)
+                        }
                     }
                 }
             }
         }
         
     }
-}
-
-func delTips(){
-    
 }
 
 struct tipsCollectedItem:View {
@@ -60,7 +61,34 @@ struct tipsCollectedItem:View {
                     .padding(.leading,10)
                     .foregroundColor(Color.white)
                 Spacer()
-                Button(action: delTips) {
+                Button(action: {
+                    
+                    let user = UserDefaults.standard
+                    //存取用户信息
+                    let stu:String = user.string(forKey: "sno") ?? ""
+                    
+                    AF.request(RequestURL.init().url+"tips/delStar",
+                               method: .delete,
+                               parameters: ["sno":stu,"tipsId":String(self.tableData.tipsCollectedList[index].tipsId)],
+                               encoding: JSONEncoding.default).responseJSON{ (response) in
+                        switch response.result {
+                        //成功接收
+                        case .success(let data):
+                            
+                            let res = JSON(data).boolValue
+                            //删除后界面刷新,移除数据
+                            if res {
+                                self.tableData.del(id: index);
+                            }
+                            
+                            break
+                        case .failure(let error):
+                            print("错误信息:\(error)")
+                            break
+                        }
+                        
+                    }
+                }) {
                     Image(systemName: "xmark")
                         .foregroundColor(Color.red)
                 }

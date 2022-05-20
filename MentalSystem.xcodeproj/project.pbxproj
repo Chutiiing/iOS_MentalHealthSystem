@@ -11,6 +11,7 @@
 		C711F5572836771400779B84 /* RequestURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5562836771400779B84 /* RequestURL.swift */; };
 		C711F5592836A2A400779B84 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5582836A2A400779B84 /* LoginView.swift */; };
 		C711F55B2836A2BA00779B84 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F55A2836A2BA00779B84 /* SignInView.swift */; };
+		C711F55D2837685900779B84 /* TipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F55C2837685900779B84 /* TipsData.swift */; };
 		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
@@ -60,6 +61,7 @@
 		C711F5562836771400779B84 /* RequestURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestURL.swift; sourceTree = "<group>"; };
 		C711F5582836A2A400779B84 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		C711F55A2836A2BA00779B84 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		C711F55C2837685900779B84 /* TipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsData.swift; sourceTree = "<group>"; };
 		C77E04202822AB3100B68E38 /* TipsCollectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedView.swift; sourceTree = "<group>"; };
 		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
 		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				C7E791CC281BB414002DF4A4 /* StationMainView.swift */,
 				C7AF7162282A4AC000236EA5 /* BookingView.swift */,
 				C7AF7164282A4C1400236EA5 /* BookingData.swift */,
+				C711F55C2837685900779B84 /* TipsData.swift */,
 			);
 			path = "心理健康站";
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
 				C7E791CB281BB230002DF4A4 /* TabBarView.swift in Sources */,
 				C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */,
+				C711F55D2837685900779B84 /* TipsData.swift in Sources */,
 				C711F55B2836A2BA00779B84 /* SignInView.swift in Sources */,
 				C7E791C9281AC7DE002DF4A4 /* TestData.swift in Sources */,
 				C7E791D1281BB433002DF4A4 /* PersonMainView.swift in Sources */,
