@@ -14,6 +14,8 @@
 		C711F55D2837685900779B84 /* TipsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F55C2837685900779B84 /* TipsData.swift */; };
 		C711F55F2837D20D00779B84 /* WriteTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F55E2837D20D00779B84 /* WriteTestView.swift */; };
 		C711F5612837D82A00779B84 /* QuestionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5602837D82A00779B84 /* QuestionData.swift */; };
+		C711F5632838BC8100779B84 /* NegativeCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5622838BC8100779B84 /* NegativeCount.swift */; };
+		C711F5652838DA1600779B84 /* TestResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C711F5642838DA1600779B84 /* TestResultView.swift */; };
 		C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04202822AB3100B68E38 /* TipsCollectedView.swift */; };
 		C77E04232822AFD800B68E38 /* TipsCollectedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04222822AFD800B68E38 /* TipsCollectedData.swift */; };
 		C77E04252822B48B00B68E38 /* BookingRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77E04242822B48B00B68E38 /* BookingRecordView.swift */; };
@@ -66,6 +68,8 @@
 		C711F55C2837685900779B84 /* TipsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsData.swift; sourceTree = "<group>"; };
 		C711F55E2837D20D00779B84 /* WriteTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteTestView.swift; sourceTree = "<group>"; };
 		C711F5602837D82A00779B84 /* QuestionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionData.swift; sourceTree = "<group>"; };
+		C711F5622838BC8100779B84 /* NegativeCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegativeCount.swift; sourceTree = "<group>"; };
+		C711F5642838DA1600779B84 /* TestResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultView.swift; sourceTree = "<group>"; };
 		C77E04202822AB3100B68E38 /* TipsCollectedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedView.swift; sourceTree = "<group>"; };
 		C77E04222822AFD800B68E38 /* TipsCollectedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectedData.swift; sourceTree = "<group>"; };
 		C77E04242822B48B00B68E38 /* BookingRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRecordView.swift; sourceTree = "<group>"; };
@@ -214,6 +218,8 @@
 				C7E791D6281BCF9A002DF4A4 /* TableDetailView.swift */,
 				C711F55E2837D20D00779B84 /* WriteTestView.swift */,
 				C711F5602837D82A00779B84 /* QuestionData.swift */,
+				C711F5622838BC8100779B84 /* NegativeCount.swift */,
+				C711F5642838DA1600779B84 /* TestResultView.swift */,
 			);
 			path = "心理测评";
 			sourceTree = "<group>";
@@ -402,6 +408,7 @@
 				C77E04212822AB3100B68E38 /* TipsCollectedView.swift in Sources */,
 				C7AF7165282A4C1400236EA5 /* BookingData.swift in Sources */,
 				C7CA179028226A3000AC5CA1 /* TestHistoryData.swift in Sources */,
+				C711F5632838BC8100779B84 /* NegativeCount.swift in Sources */,
 				C7A56CB7281A64F200846C78 /* MentalSystemApp.swift in Sources */,
 				C7A56CE5281A6EDB00846C78 /* TestMainView.swift in Sources */,
 				C711F5612837D82A00779B84 /* QuestionData.swift in Sources */,
@@ -415,6 +422,7 @@
 				C711F5592836A2A400779B84 /* LoginView.swift in Sources */,
 				C7E791D7281BCF9A002DF4A4 /* TableDetailView.swift in Sources */,
 				C7E791CF281BB424002DF4A4 /* HealMainView.swift in Sources */,
+				C711F5652838DA1600779B84 /* TestResultView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

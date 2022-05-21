@@ -29,7 +29,6 @@ struct TestMainView: View {
                             .padding(.vertical, 5.0)
                             .padding(.horizontal)
                     }
-                    
                 }
             }
         }

@@ -12,7 +12,7 @@ class RequestURL{
     var url:String = ""
     
     init(){
-        self.url = "http://192.168.1.110:9090/"
+        self.url = "http://192.168.1.105:9090/"
     }
 }
 

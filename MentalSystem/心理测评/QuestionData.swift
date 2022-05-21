@@ -28,7 +28,7 @@ class QuestionData:ObservableObject {
         self.questionContentList = []
         
         //获取是哪张表
-        let currentTable:Int = UserDefaults.standard.integer(forKey: "tableid")
+        let currentTable:Int = UserDefaults.standard.integer(forKey: "id")
         
         //请求查询列表
         AF.request(RequestURL.init().url+"test/findContent/"+String(currentTable),

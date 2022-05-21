@@ -92,20 +92,25 @@ struct TableDetailView: View {
                 .padding(.top,100)
             }
             .edgesIgnoringSafeArea(.top)   //忽略上方的安全距离
+            .onAppear{
+                UserDefaults.standard.set(self.data.tableid, forKey: "id")
+            }
             
-            NavigationLink(destination:
-                            WriteTestView(title: self.data.title)){
+            //开始测评
+            Button(action: {
+                //界面跳转
+                if let window = UIApplication.shared.windows.first
+                {
+                    window.rootViewController = UIHostingController(rootView: WriteTestView(title: self.data.title))
+                    window.makeKeyAndVisible()
+                }
+            }){
                 Text("开始测评")
                     .foregroundColor(Color.white)
                     .frame(width: UIScreen.main.bounds.size.width/2+20, height: 50, alignment: .center)
                     .background(Color(.sRGB, red: 133/255, green: 175/255, blue: 235/255))
                     .cornerRadius(15)
             }
-        }
-        .onAppear{
-            //存入tableid
-            let user = UserDefaults.standard
-            user.set(self.data.tableid, forKey: "tableid")
         }
     }
 }

@@ -16,6 +16,15 @@ struct WriteTestView: View {
     
     @State var confirmDeletion = false;
     
+    //提示信息
+    struct AlertData:Identifiable{
+        var id = UUID()
+        var message:String
+    }
+
+    @State var alertData:AlertData?
+    
+    
     var body: some View {
         VStack {
             VStack{
@@ -82,8 +91,26 @@ struct WriteTestView: View {
                 Button("取消", role: .cancel) {}
             }
             
-            NavigationLink(destination:{
-                Text("测评结果")
+            //完成测评
+            Button(action: {
+//                //界面跳转
+//                if let window = UIApplication.shared.windows.first
+//                {
+//                    window.rootViewController = UIHostingController(rootView: WriteTestView(title: self.data.title))
+//                    window.makeKeyAndVisible()
+//                }
+                if NegativeCount.shareCount.countList.count != self.tableData.questionContentList.count {
+                    self.alertData = AlertData(message: "还未完成测评，请耐心完成")
+                }
+                else{
+                    var count = 0
+                    for temp in NegativeCount.shareCount.countList{
+                        if temp == 1 {
+                            count += 1
+                        }
+                    }
+                }
+                
             }){
                 Text("完成测评")
                     .foregroundColor(Color.white)
@@ -91,6 +118,12 @@ struct WriteTestView: View {
                     .background(Color(.sRGB, red: 133/255, green: 175/255, blue: 235/255))
                     .cornerRadius(15)
             }
+            .alert(item: $alertData){ alertData in
+        
+                Alert(title: Text("提示"), message: Text(alertData.message), dismissButton: .default(Text("确认")))
+                
+            }
+            
         }
     }
 }
@@ -103,6 +136,10 @@ struct questionItem:View{
     //下标
     var index:Int
     
+    //是否选中:0表示都不选，1表示Yes，2表示No,选择后不可修改
+    @State var selected:Int = 0;
+    @State var finish = false
+    
     var body: some View{
         VStack(){
             Rectangle()
@@ -114,7 +151,22 @@ struct questionItem:View{
             Rectangle()
                 .frame(width:350,height: 1)
                 .foregroundColor(Color(.sRGB, red:220/255, green: 220/255, blue: 220/255))
+            
+            //选择是
             Button(action:{
+                
+                if !self.finish {
+                    self.selected = 1
+                    
+                    if self.tableData.questionContentList[index].flag == 0 {
+                        NegativeCount.shareCount.countList.append(1)
+                    }
+                    else{
+                        NegativeCount.shareCount.countList.append(0)
+                    }
+                }
+                
+                self.finish = true
                 
             }){
                 Text("是")
@@ -122,10 +174,27 @@ struct questionItem:View{
                     .frame(width: 350, height: 40)
                     .foregroundColor(Color(.sRGB, red:80/255, green: 80/255, blue: 80/255))
                     .background(Rectangle()
-                                    .foregroundColor(Color(.sRGB, red: 235/255, green: 228/255, blue: 249/255))
+                                    .foregroundColor(self.selected == 1 && self.finish ? Color(.sRGB, red: 250/255, green: 206/255, blue: 167/255) : Color(.sRGB, red: 235/255, green: 228/255, blue: 249/255))
                                     .cornerRadius(10))
             }
+            .buttonStyle(StaticButtonStyle())
+            
+            //选择否
             Button(action:{
+                
+                if !self.finish {
+                    
+                    self.selected = 2
+            
+                    if self.tableData.questionContentList[index].flag == 1 {
+                        NegativeCount.shareCount.countList.append(1)
+                    }
+                    else{
+                        NegativeCount.shareCount.countList.append(0)
+                    }
+                }
+                
+                self.finish = true
                 
             }){
                 Text("否")
@@ -133,16 +202,23 @@ struct questionItem:View{
                     .frame(width: 350, height: 40)
                     .foregroundColor(Color(.sRGB, red:80/255, green: 80/255, blue: 80/255))
                     .background(Rectangle()
-                                    .foregroundColor(Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255))
+                                    .foregroundColor(self.selected == 2 && self.finish ? Color(.sRGB, red: 250/255, green: 206/255, blue: 167/255) : Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255))
                                     .cornerRadius(10))
             }
             .padding(.bottom)
+            .buttonStyle(StaticButtonStyle())
         }
         .cornerRadius(20)
         .background(Rectangle().foregroundColor(Color.white))
         .cornerRadius(20)
         .shadow(radius: 3)
         
+    }
+}
+
+struct StaticButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
     }
 }
 
