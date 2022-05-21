@@ -93,12 +93,6 @@ struct WriteTestView: View {
             
             //完成测评
             Button(action: {
-//                //界面跳转
-//                if let window = UIApplication.shared.windows.first
-//                {
-//                    window.rootViewController = UIHostingController(rootView: WriteTestView(title: self.data.title))
-//                    window.makeKeyAndVisible()
-//                }
                 if NegativeCount.shareCount.countList.count != self.tableData.questionContentList.count {
                     self.alertData = AlertData(message: "还未完成测评，请耐心完成")
                 }
@@ -108,6 +102,12 @@ struct WriteTestView: View {
                         if temp == 1 {
                             count += 1
                         }
+                    }
+                    //界面跳转
+                    if let window = UIApplication.shared.windows.first
+                    {
+                        window.rootViewController = UIHostingController(rootView: TestResultView())
+                        window.makeKeyAndVisible()
                     }
                 }
                 
