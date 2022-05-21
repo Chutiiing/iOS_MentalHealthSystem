@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TestHistoryView: View {
     
-    @ObservedObject var testHistoryData:TestHistoryData = TestHistoryData(data: [testHistoryContent(title: "心理压力测评表", result: "良好", date: "2022.05.03"),testHistoryContent(title: "焦虑自评量表 (SAS)", result: "良好", date: "2022.05.01"),testHistoryContent(title: "心理压力测评表", result: "良好", date: "2022.05.01")])
+    @ObservedObject var testHistoryData:TestHistoryData = TestHistoryData()
     
     var body: some View {
         VStack(alignment:.leading) {
@@ -69,18 +69,10 @@ struct testHistoryItem:View {
                 Text("测试结果:")
                 Text(self.tableData.testHistoryContentList[index].result)
                 Spacer()
-                Button(action: delTestHistory) {
-                    Text("删除")
-                        .foregroundColor(.red)
-                        .frame(width: 60,height: 25)
-                        .background(Rectangle()
-                                        .foregroundColor(Color.white))
-                        .cornerRadius(15)
-                }
-                .padding(.trailing)
             }
             .font(.system(size: 17))
             .padding(.leading)
+            .padding(.vertical,5)
             HStack(){
                 Image(systemName: "clock")
                 Text(self.tableData.testHistoryContentList[index].date)

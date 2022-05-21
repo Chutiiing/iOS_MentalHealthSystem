@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Alamofire
+import SwiftyJSON
 
 struct WriteTestView: View {
     
@@ -23,6 +25,7 @@ struct WriteTestView: View {
     }
 
     @State var alertData:AlertData?
+    @State var stuState:String = ""
     
     
     var body: some View {
@@ -97,16 +100,70 @@ struct WriteTestView: View {
                     self.alertData = AlertData(message: "还未完成测评，请耐心完成")
                 }
                 else{
+                    //计算消极个数
                     var count = 0
                     for temp in NegativeCount.shareCount.countList{
                         if temp == 1 {
                             count += 1
                         }
                     }
+                    
+                    if count/self.tableData.questionContentList.count < 9/30{
+                        self.stuState = "良好"
+                    }
+                    else{
+                        self.stuState = "危险"
+                    }
+                    
+                    let sno:String = UserDefaults.standard.string(forKey: "sno") ?? ""
+                    let tableid:Int = UserDefaults.standard.integer(forKey: "id")
+                    
+                    //添加测评记录
+                    AF.request(RequestURL.init().url+"testHistory/insert",
+                               method: .post,
+                               parameters: ["sno":sno,"tableid":String(tableid),"result":self.stuState],
+                               encoding: JSONEncoding.default).responseJSON{ (response) in
+                        switch response.result {
+                        //成功接收
+                        case .success(let data):
+                            
+                            let res = JSON(data).boolValue
+                            
+                            print(res)
+                            
+                            break
+                        case .failure(let error):
+                            print("错误信息:\(error)")
+                            break
+                        }
+                        
+                    }
+                    
+                    //更新学生状态
+                    AF.request(RequestURL.init().url+"students/updateState",
+                               method: .post,
+                               parameters: ["sno":sno,"state":self.stuState],
+                               encoding: JSONEncoding.default).responseJSON{ (response) in
+                        switch response.result {
+                        //成功接收
+                        case .success(let data):
+                            
+                            let res = JSON(data).boolValue
+                            
+                            print(res)
+                            
+                            break
+                        case .failure(let error):
+                            print("错误信息:\(error)")
+                            break
+                        }
+                        
+                    }
+                    
                     //界面跳转
                     if let window = UIApplication.shared.windows.first
                     {
-                        window.rootViewController = UIHostingController(rootView: TestResultView())
+                        window.rootViewController = UIHostingController(rootView: TestResultView(state: self.stuState))
                         window.makeKeyAndVisible()
                     }
                 }
