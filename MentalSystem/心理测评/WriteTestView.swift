@@ -63,9 +63,8 @@ struct WriteTestView: View {
                         ForEach(self.tableData.questionContentList){item in
                             questionItem(index: item.id)
                                 .environmentObject(self.tableData)
-                                .padding(.vertical, 5.0)
                                 .padding(.horizontal)
-                            
+                                .padding(.vertical, 6.0)
                         }
                     }
                 }
@@ -195,6 +194,7 @@ struct questionItem:View{
     
     //是否选中:0表示都不选，1表示Yes，2表示No,选择后不可修改
     @State var selected:Int = 0;
+    //判断是否已经完成
     @State var finish = false
     
     var body: some View{
@@ -231,9 +231,15 @@ struct questionItem:View{
                     .frame(width: 350, height: 40)
                     .foregroundColor(Color(.sRGB, red:80/255, green: 80/255, blue: 80/255))
                     .background(Rectangle()
-                                    .foregroundColor(self.selected == 1 && self.finish ? Color(.sRGB, red: 250/255, green: 206/255, blue: 167/255) : Color(.sRGB, red: 235/255, green: 228/255, blue: 249/255))
-                                    .cornerRadius(10))
+                                    .foregroundColor(Color(.sRGB, red: 235/255, green: 228/255, blue: 249/255))
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .stroke(self.selected == 1 && self.finish ? Color(.sRGB, red:60/255, green: 60/255, blue: 60/255) : .clear , lineWidth: self.selected == 1 && self.finish ? 1 : 0))
+                                                
+                                    )
             }
+            .padding(.horizontal)
             .buttonStyle(StaticButtonStyle())
             
             //选择否
@@ -259,18 +265,24 @@ struct questionItem:View{
                     .frame(width: 350, height: 40)
                     .foregroundColor(Color(.sRGB, red:80/255, green: 80/255, blue: 80/255))
                     .background(Rectangle()
-                                    .foregroundColor(self.selected == 2 && self.finish ? Color(.sRGB, red: 250/255, green: 206/255, blue: 167/255) : Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255))
-                                    .cornerRadius(10))
+                                    .foregroundColor(Color(.sRGB, red: 210/255, green: 228/255, blue: 249/255))
+                                    .cornerRadius(10)
+                                    .overlay(
+                                        RoundedRectangle(cornerRadius: 10, style: .continuous)
+                                            .stroke(self.selected == 2 && self.finish ? Color(.sRGB, red:60/255, green: 60/255, blue: 60/255) : .clear , lineWidth: self.selected == 2 && self.finish ? 1 : 0))
+                                                
+                                    )
             }
+            .padding(.horizontal)
             .padding(.bottom)
             .buttonStyle(StaticButtonStyle())
+            
         }
-        .cornerRadius(20)
         .background(Rectangle().foregroundColor(Color.white))
         .cornerRadius(20)
         .shadow(radius: 3)
-        
     }
+        
 }
 
 struct StaticButtonStyle: ButtonStyle {
