@@ -106,8 +106,10 @@ struct WriteTestView: View {
                             count += 1
                         }
                     }
+        
+                    print(Double(count/self.tableData.questionContentList.count))
                     
-                    if count/self.tableData.questionContentList.count < 9/30{
+                    if Double(count/self.tableData.questionContentList.count) < 9/30 || count == 0{
                         self.stuState = "良好"
                     }
                     else{
